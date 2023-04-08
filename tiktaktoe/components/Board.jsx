@@ -1,20 +1,16 @@
-import React from 'react'
-import Square from './Square'
+import React from "react";
+import Square from "./Square";
 
-const Board = ({squares, onClick}) => {
+const Board = ({ squares, onClick }) => {
   return (
-    <div>
-      <Square value="1" onClick={() => onClick("xdxd")}/>
-      <Square value="2" onClick={() => onClick("xdxd")}/>
-      <Square value="3" onClick={() => onClick("xdxd")}/>
-      <Square value="4" onClick={() => onClick("xdxd")}/>
-      <Square value="5" onClick={() => onClick("xdxd")}/>
-      <Square value="6" onClick={() => onClick("xdxd")}/>
-      <Square value="7" onClick={() => onClick("xdxd")}/>
-      <Square value="8" onClick={() => onClick("xdxd")}/>
-      <Square value="9" onClick={() => onClick("xdxd")}/>
+    <div className="flex justify-center">
+      <div className="grid grid-cols-3 border-purple-800 border-4 w-[700px] h-[700px]">
+        {squares.map((square, i) => 
+          <Square value={square} onClick={() => onClick(i)} key={i} />
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Board
+export default Board;
